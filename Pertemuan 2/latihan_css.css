@@ -85,7 +85,7 @@ button {
 button:hover {
     background-color: #219150; /* Hijau lebih gelap saat hover */
 }
-  <!-- Tambah Style status ok dan status down(latihan 1) -->
+/* Tambah Style status ok dan status down (latihan 1) */
 .status-ok {
     color: #219150;       /* Hijau tebal sesuai latihan 1 */
     font-weight: bold;
@@ -96,7 +96,7 @@ button:hover {
     font-weight: bold;
 }
 
-    /* Tambah Style container sesuai latihan 2 */
+/* Tambah Style container sesuai latihan 2 */
 #container {
     max-width: 800px;
     margin: 0 auto;       /* Tengah horizontal */
