@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="laporan_kualitas.css">
+    <title>Laporan Inspeksi Kualitas</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Laporan Inspeksi Kualitas</h1>
+            <p>Formulir pencatatan hasil inspeksi produk</p>
+            <p>Disusun oleh : Maessa Andrea Vallenia (23051430044)</p>
+            <hr>
+        </header>
+        <section>
+            <!-- Formulir Laporan Inspeksi Kualitas -->
+            <form action="">
+
+                <!-- ID Produk -->
+                <label for="id_produk">ID Produk:</label><br>
+                <input type="text" id="id_produk" name="id_produk" placeholder="Masukkan ID produk"><br><br>
+
+                <!-- Nama Inspektur -->
+                <label for="nama_inspektur">Nama Inspektur:</label><br>
+                <input type="text" id="nama_inspektur" name="nama_inspektur" placeholder="Masukkan nama inspektur"><br><br>
+
+                <!-- Jenis Cacat -->
+                <label>Jenis Cacat:</label><br>
+                <!-- Radio Geometri -->
+                <input type="radio" id="geometri" name="jenis_cacat" value="Geometri">
+                <label for="geometri">Geometri</label><br>
+                <!-- Radio Permukaan -->
+                <input type="radio" id="permukaan" name="jenis_cacat" value="Permukaan">
+                <label for="permukaan">Permukaan</label><br>
+                <!-- Radio Fungsional -->
+                <input type="radio" id="fungsional" name="jenis_cacat" value="Fungsional">
+                <label for="fungsional">Fungsional</label><br><br>
+
+                <!-- Jumlah Cacat -->
+                <label for="jumlah_cacat">Jumlah Cacat:</label><br>
+                <input type="number" id="jumlah_cacat" name="jumlah_cacat" min="0" placeholder="Masukkan jumlah cacat"><br><br>
+
+                <!-- Foto Produk (Placeholder) -->
+                <label for="foto_produk">Foto Produk:</label><br>
+                <input type="file" id="foto_produk" name="foto_produk"><br><br>
+
+                <!-- Tombol Submit -->
+                <button type="submit">Kirim Laporan</button>
+                <button type="reset">Reset data</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
+ 

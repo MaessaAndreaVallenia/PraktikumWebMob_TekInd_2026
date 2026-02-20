@@ -1,0 +1,98 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4; /* Warna abu-abu muda untuk background */
+    color: #333;
+    margin: 10px;
+    padding: 20px;
+}
+
+/* Tambah style container sesuai latihan 2 */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* Header styling */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+p {
+    text-align: center;
+    margin: 2px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+hr {
+    margin: 15px 0 20px 0;
+    border: 0;
+    border-top: 2px solid #2980b9; /* Biru profesional */
+}
+
+/* Formulir styling */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto; /* Formulir berada di tengah */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%; /* Lebar penuh */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Padding tidak menambah lebar total */
+}
+
+/* Styling khusus tombol */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* Tombol submit (hijau resmi latihan 2) */
+button[type="submit"] {
+    background-color: #27ae60;
+}
+
+button[type="submit"]:hover {
+    background-color: #219150;
+}
+
+/* Tombol reset (merah resmi latihan 2) */
+button[type="reset"] {
+    background-color: #c0392b;
+}
+
+button[type="reset"]:hover {
+    background-color: #e74c3c;
+}
