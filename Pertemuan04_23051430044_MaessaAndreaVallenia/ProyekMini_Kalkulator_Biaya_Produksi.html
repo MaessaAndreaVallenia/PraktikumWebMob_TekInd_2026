@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Mini - Kalkulator Biaya Produksi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <header class="bg-info text-light d-flex align-items-center justify-content-center text-center"
+    style="min-height: 180px;">
+        <div>
+            <h1 class="fw-bold mb-2">Proyek Mini - Kalkulator Biaya Produksi</h1>
+            <p class="fs-5 mb-0">Maessa Andrea Vallenia</p>
+            <p class="mb-0">23051430044</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+
+        <section class="mb-5">
+            <article class="card shadow-sm">
+                <div class="card-body">
+
+                    <h2 class="h4 fw-bold text-center mb-4">Penjelasan Penggunaan Kode</h2>
+
+                    <h3 class="h5 mt-3">1. Setup Awal</h3>
+                    <div class="bg-light p-3 border rounded">
+                        <pre><code>document.getElementById("formProduksi")
+.addEventListener("submit", function (event) {
+
+    event.preventDefault();</code></pre>
+                    </div>
+                    <p>
+                        Baris kode ini mengambil elemen form berdasarkan ID,
+                        kemudian menambahkan event listener untuk mendeteksi aksi submit.
+                        Fungsi <code>event.preventDefault()</code> digunakan agar halaman
+                        tidak melakukan refresh otomatis saat form dikirim.
+                    </p>
+
+                    <h3 class="h5 mt-4">2. Mengambil Data Input</h3>
+                    <div class="bg-light p-3 border rounded">
+                        <pre><code>let biayaBahanBaku = Number(document.getElementById("bahanBaku").value);
+let biayaTenagaKerja = Number(document.getElementById("tenagaKerja").value);
+let biayaOverhead = Number(document.getElementById("overhead").value);
+let jumlahProduksi = Number(document.getElementById("jumlahProduksi").value);</code></pre>
+                    </div>
+                    <p>
+                        Data yang dimasukkan pengguna melalui field HTML
+                        diambil menggunakan <code>getElementById()</code>,
+                        lalu dikonversi ke tipe <code>Number</code>
+                        supaya dapat diproses dalam operasi aritmatika.
+                    </p>
+
+                    <h3 class="h5 mt-4">3. Validasi Input</h3>
+                    <div class="bg-light p-3 border rounded">
+                        <pre><code>if (jumlahProduksi &lt;= 0) {
+    output.textContent = "Jumlah produksi tidak valid.";
+    return;
+}</code></pre>
+                    </div>
+                    <p>
+                        Bagian ini berfungsi untuk memeriksa apakah jumlah produksi
+                        bernilai nol atau kurang dari nol.
+                        Jika kondisi tersebut terjadi,
+                        maka proses perhitungan dihentikan menggunakan <code>return</code>.
+                    </p>
+
+                    <h3 class="h5 mt-4">4. Perhitungan Biaya</h3>
+                    <div class="bg-light p-3 border rounded">
+                        <pre><code>let totalPerUnit =
+(biayaBahanBaku + biayaTenagaKerja + biayaOverhead) / jumlahProduksi;</code></pre>
+                    </div>
+                    <p class="fw-semibold">
+                        Total per Unit =
+                        (Bahan Baku + Tenaga Kerja + Overhead) ÷ Jumlah Produksi
+                    </p>
+
+                    <h3 class="h5 mt-4">5. Logika If / Else</h3>
+                    <div class="bg-light p-3 border rounded">
+                        <pre><code>let status;
+
+if (jumlahProduksi &lt; 100) {
+    status = "Biaya Tinggi (Ekonomi Skala Kecil)";
+} else {
+    status = "Biaya Efisien";
+}</code></pre>
+                    </div>
+                    <p>
+                        Struktur percabangan dimanfaatkan untuk menentukan kategori biaya
+                        berdasarkan jumlah unit produksi.
+                        Jika produksi kurang dari batas tertentu,
+                        maka dikategorikan sebagai biaya tinggi,
+                        sedangkan produksi dalam jumlah besar dianggap lebih efisien.
+                    </p>
+
+                    <h3 class="h5 mt-4">6. Menampilkan Output</h3>
+                    <div class="bg-light p-3 border rounded">
+                        <pre><code>let output = document.getElementById("hasilOutput");
+
+output.innerHTML =
+"Total Biaya per Unit: Rp " +
+totalPerUnit.toLocaleString("id-ID", { minimumFractionDigits: 2 }) +
+"&lt;br&gt;Status Produksi: " + status;</code></pre>
+                    </div>
+                    <p>
+                        Nilai hasil perhitungan ditampilkan pada elemen dengan ID
+                        <code>hasilOutput</code> menggunakan properti <code>innerHTML</code>,
+                        sehingga informasi total biaya dan status produksi
+                        dapat ditampilkan secara dinamis di halaman.
+                    </p>
+
+                </div>
+            </article>
+        </section>
+
+        <section class="mb-5">
+            <article class="card shadow-sm">
+                <div class="card-body">
+
+                    <h2 class="h4 fw-bold text-center mb-4">Input Data Produksi</h2>
+
+                    <form id="formProduksi">
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="bahanBaku" class="form-label">Biaya Bahan Baku (Rp)</label>
+                                <input type="number" class="form-control" id="bahanBaku" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="tenagaKerja" class="form-label">Biaya Tenaga Kerja (Rp)</label>
+                                <input type="number" class="form-control" id="tenagaKerja" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="overhead" class="form-label">Biaya Overhead (Rp)</label>
+                                <input type="number" class="form-control" id="overhead" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="jumlahProduksi" class="form-label">Jumlah Produksi (Unit)</label>
+                                <input type="number" class="form-control" id="jumlahProduksi" required>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary w-100">
+                                Hitung Biaya
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </article>
+        </section>
+
+        <!-- HASIL -->
+        <section>
+            <article class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h2 class="h4 fw-bold mb-3">Hasil Perhitungan</h2>
+                    <p class="text-muted">
+                        Output perhitungan akan ditampilkan pada bagian ini
+                        serta dapat dilihat melalui console browser untuk keperluan pengecekan.
+                    </p>
+                    <div id="hasilOutput" class="fw-semibold fs-5"></div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="ProyekMini_Kalkulator_Biaya_Produksi.js"></script>
+
+</body>
+
+</html>
