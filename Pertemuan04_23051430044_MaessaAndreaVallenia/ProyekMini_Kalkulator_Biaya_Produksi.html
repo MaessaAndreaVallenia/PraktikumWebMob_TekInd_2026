@@ -46,7 +46,7 @@
                         <pre><code>let biayaBahanBaku = Number(document.getElementById("bahanBaku").value);
 let biayaTenagaKerja = Number(document.getElementById("tenagaKerja").value);
 let biayaOverhead = Number(document.getElementById("overhead").value);
-let jumlahProduksi = Number(document.getElementById("jumlahProduksi").value);</code></pre>
+let totalProduksi = Number(document.getElementById("totalProduksi").value);</code></pre>
                     </div>
                     <p>
                         Data yang dimasukkan pengguna melalui field HTML
@@ -57,13 +57,13 @@ let jumlahProduksi = Number(document.getElementById("jumlahProduksi").value);</c
 
                     <h3 class="h5 mt-4">3. Validasi Input</h3>
                     <div class="bg-light p-3 border rounded">
-                        <pre><code>if (jumlahProduksi &lt;= 0) {
-    output.textContent = "Jumlah produksi tidak valid.";
+                        <pre><code>if (totalProduksi &lt;= 0) {
+    output.textContent = "Total produksi tidak valid.";
     return;
 }</code></pre>
                     </div>
                     <p>
-                        Bagian ini berfungsi untuk memeriksa apakah jumlah produksi
+                        Bagian ini berfungsi untuk memeriksa apakah total produksi
                         bernilai nol atau kurang dari nol.
                         Jika kondisi tersebut terjadi,
                         maka proses perhitungan dihentikan menggunakan <code>return</code>.
@@ -72,18 +72,18 @@ let jumlahProduksi = Number(document.getElementById("jumlahProduksi").value);</c
                     <h3 class="h5 mt-4">4. Perhitungan Biaya</h3>
                     <div class="bg-light p-3 border rounded">
                         <pre><code>let totalPerUnit =
-(biayaBahanBaku + biayaTenagaKerja + biayaOverhead) / jumlahProduksi;</code></pre>
+(biayaBahanBaku + biayaTenagaKerja + biayaOverhead) / totalProduksi;</code></pre>
                     </div>
                     <p class="fw-semibold">
                         Total per Unit =
-                        (Bahan Baku + Tenaga Kerja + Overhead) ÷ Jumlah Produksi
+                        (Bahan Baku + Tenaga Kerja + Overhead) ÷ Total Produksi
                     </p>
 
                     <h3 class="h5 mt-4">5. Logika If / Else</h3>
                     <div class="bg-light p-3 border rounded">
                         <pre><code>let status;
 
-if (jumlahProduksi &lt; 100) {
+if (totalProduksi &lt; 100) {
     status = "Biaya Tinggi (Ekonomi Skala Kecil)";
 } else {
     status = "Biaya Efisien";
