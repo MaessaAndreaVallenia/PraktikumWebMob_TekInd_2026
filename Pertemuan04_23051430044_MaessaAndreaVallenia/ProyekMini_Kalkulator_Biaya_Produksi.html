@@ -21,18 +21,19 @@
 
     <main class="container my-5">
 
-        <section class="mb-5">
-            <article class="card shadow-sm">
-                <div class="card-body">
+            <section class="mb-5">
+                <article class="card shadow-sm">
+                    <div class="card-body">
 
-                    <h2 class="h4 fw-bold text-center mb-4">Penjelasan Penggunaan Kode</h2>
+                        <h2 class="h4 fw-bold text-center mb-4">Penjelasan Penggunaan Kode</h2>
 
-                    <h3 class="h5 mt-3">1. Setup Awal</h3>
-                    <div class="bg-light p-3 border rounded">
-                        <pre><code>document.getElementById("formProduksi")
-.addEventListener("submit", function (event) {
+                        <h3 class="h5 mt-3">1. Setup Awal</h3>
+                        <div class="bg-light p-3 border rounded">
+                            <pre><code>document.getElementById("formProduksi")
+    .addEventListener("submit", function (event) {
 
-    event.preventDefault();</code></pre>
+
+        event.preventDefault();</code></pre>
                     </div>
                     <p>
                         Baris kode ini mengambil elemen form berdasarkan ID,
@@ -46,7 +47,7 @@
                         <pre><code>let biayaBahanBaku = Number(document.getElementById("bahanBaku").value);
 let biayaTenagaKerja = Number(document.getElementById("tenagaKerja").value);
 let biayaOverhead = Number(document.getElementById("overhead").value);
-let totalProduksi = Number(document.getElementById("totalProduksi").value);</code></pre>
+let jumlahProduksi = Number(document.getElementById("jumlahProduksi").value);</code></pre>
                     </div>
                     <p>
                         Data yang dimasukkan pengguna melalui field HTML
@@ -57,8 +58,8 @@ let totalProduksi = Number(document.getElementById("totalProduksi").value);</cod
 
                     <h3 class="h5 mt-4">3. Validasi Input</h3>
                     <div class="bg-light p-3 border rounded">
-                        <pre><code>if (totalProduksi &lt;= 0) {
-    output.textContent = "Total produksi tidak valid.";
+                        <pre><code>if (jumlahProduksi &lt;= 0) {
+    output.textContent = "Jumlah produksi tidak valid.";
     return;
 }</code></pre>
                     </div>
@@ -72,11 +73,11 @@ let totalProduksi = Number(document.getElementById("totalProduksi").value);</cod
                     <h3 class="h5 mt-4">4. Perhitungan Biaya</h3>
                     <div class="bg-light p-3 border rounded">
                         <pre><code>let totalPerUnit =
-(biayaBahanBaku + biayaTenagaKerja + biayaOverhead) / totalProduksi;</code></pre>
+(biayaBahanBaku + biayaTenagaKerja + biayaOverhead) / jumlahProduksi;</code></pre>
                     </div>
                     <p class="fw-semibold">
                         Total per Unit =
-                        (Bahan Baku + Tenaga Kerja + Overhead) ÷ Total Produksi
+                        (Bahan Baku + Tenaga Kerja + Overhead) ÷ Jumlah Produksi
                     </p>
 
                     <h3 class="h5 mt-4">5. Logika If / Else</h3>
@@ -131,7 +132,7 @@ totalPerUnit.toLocaleString("id-ID", { minimumFractionDigits: 2 }) +
                                 <input type="number" class="form-control" id="bahanBaku" required>
                             </div>
 
-                            <div class="col-md-6">
+                   <div class="col-md-6">
                                 <label for="tenagaKerja" class="form-label">Biaya Tenaga Kerja (Rp)</label>
                                 <input type="number" class="form-control" id="tenagaKerja" required>
                             </div>
@@ -179,5 +180,4 @@ totalPerUnit.toLocaleString("id-ID", { minimumFractionDigits: 2 }) +
     <script src="ProyekMini_Kalkulator_Biaya_Produksi.js"></script>
 
 </body>
-
 </html>
