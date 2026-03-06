@@ -4,158 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan 1 - JavaScript Dasar (Logika Matematika)</title>
+    <title>Mini Project - Kalkulator Gaji Lembur</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-    <header class="bg-info text-light d-flex align-items-center justify-content-center text-center"
-    style="min-height: 180px;">
-        <div>
-            <h1 class="fw-bold mb-2">Latihan 1 - Logika Matematika</h1>
-            <p class="fs-5 mb-0">Maessa Andrea Vallenia</p>
-            <p class="mb-0">23051430044</p>
-        </div>
+    <header class="bg-info text-light text-center py-5 mb-4">
+        <h1 class="fw-bold">Latihan 1 - Kalkulator Gaji Lembur</h1>
+        <p class="mb-0">Maessa Andrea Vallenia</p>
+        <p>23051430044</p>
     </header>
 
-    <section class="container my-5">
+
+    <!-- FORM INPUT -->
+    <section class="container mb-5">
+
         <div class="card shadow-sm">
+
             <div class="card-body">
-                <p>
-                    Program ini mensimulasikan perhitungan total gaji karyawan
-                    berdasarkan gaji pokok dan jumlah jam lembur.
-                    Hasil perhitungan ditampilkan melalui <code>console.log()</code>.
-                </p>
-                <p>
-                    Untuk melihat hasilnya, tekan <strong>F12</strong> lalu buka tab
-                    <strong>Console</strong>.
-                </p>
+
+                <h4 class="text-center mb-4">Input Data Karyawan</h4>
+
+                <form id="formGaji">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+                            <label class="form-label">Nama</label>
+                            <input type="text" id="nama" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Gaji Pokok</label>
+                            <input type="number" id="gajiPokok" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Jam Lembur</label>
+                            <input type="number" id="jamLembur" class="form-control" required>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary w-100">
+                            Hitung Gaji
+                        </button>
+                    </div>
+
+                </form>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- 1. Deklarasi variable -->
+
+    <!-- TABEL REKAP -->
     <section class="container mb-5">
+
         <div class="card shadow-sm">
+
             <div class="card-body">
-                <h4>Step 1 – Deklarasi Variabel</h4>
 
-                <div class="bg-light p-2 border rounded ">
-                    <pre><code>
-let gajiPokok = 3500000;
-let jamLembur = 12;
-</code></pre>
-                </div>
+                <h4 class="text-center mb-4">Rekap Perhitungan Gaji</h4>
 
-                <p class="mt-3">
-                    Variabel <code>gajiPokok</code> bertipe Number dan menyimpan
-                    nilai gaji dasar karyawan.
-                    Variabel <code>jamLembur</code> menyimpan jumlah jam lembur
-                    yang dilakukan karyawan.
-                </p>
+                <table class="table table-bordered table-striped text-center">
+
+                    <thead class="table-info">
+                        <tr>
+                            <th>Nama</th>
+                            <th>Gaji Pokok</th>
+                            <th>Jam Lembur</th>
+                            <th>Upah Lembur / Jam</th>
+                            <th>Total Upah Lembur</th>
+                            <th>Total Gaji</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rekapTable">
+
+                        <tr>
+                            <td colspan="6">Belum ada data</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
             </div>
+
         </div>
-    </section>
 
-    <!-- 2. Perhitungan upah lembur perjam -->
-    <section class="container mb-5">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h4>Step 2 – Menghitung Upah Lembur per Jam</h4>
-
-                <div class="bg-light p-2 border rounded ">
-                    <pre><code>
-let upahLemburPerJam = (1.5 * gajiPokok) / 173;
-</code></pre>
-                </div>
-
-                <p class="mt-3">
-                    Rumus yang digunakan mengacu pada perhitungan umum ketenagakerjaan:
-                </p>
-
-                <div class="bg-light p-2 border rounded ">
-                    Upah lembur per jam = 1.5 × gaji pokok ÷ 173
-                </div>
-
-                <p class="mt-3">
-                    Angka 173 merupakan rata-rata jumlah jam kerja dalam satu bulan.
-                    Faktor 1.5 digunakan sebagai pengali tarif lembur.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Perhitungan total upah lembur -->
-    <section class="container mb-5">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h4>Step 3 – Menghitung Total Upah Lembur</h4>
-
-                <div class="bg-light p-3 border rounded">
-                    <pre><code>
-let totalUpahLembur = upahLemburPerJam * jamLembur;
-</code></pre>
-                </div>
-
-                <p class="mt-3">
-                    Total upah lembur diperoleh dengan mengalikan
-                    tarif lembur per jam dengan jumlah jam lembur.
-                    Operator yang digunakan adalah perkalian (*).
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Perhitungan total gaji -->
-    <section class="container mb-5">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h4>Step 4 – Menghitung Total Gaji</h4>
-
-                <div class="bg-light p-3 border rounded">
-                    <pre><code>
-let totalGaji = gajiPokok + totalUpahLembur;
-</code></pre>
-                </div>
-
-                <p class="mt-3">
-                    Total gaji merupakan hasil penjumlahan antara
-                    gaji pokok dan total upah lembur.
-                    Operator yang digunakan adalah penjumlahan (+).
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Output -->
-    <section class="container mb-5">
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h4>Step 5 – Menampilkan Output ke Console</h4>
-
-                <div class="bg-light p-3 border rounded">
-                    <pre><code>
-console.log("Gaji Pokok: Rp " + gajiPokok);
-console.log("Upah Lembur per Jam: Rp " + upahLemburPerJam.toFixed(2));
-console.log("Total Upah Lembur: Rp " + totalUpahLembur.toFixed(2));
-console.log("Total Gaji: Rp " + totalGaji.toFixed(2));
-</code></pre>
-                </div>
-
-                <p class="mt-3">
-                    Fungsi <code>console.log()</code> digunakan untuk menampilkan
-                    hasil perhitungan ke console browser.
-                </p>
-
-                <p>
-                    Method <code>toFixed(2)</code> digunakan untuk membatasi
-                    dua angka di belakang koma agar format angka lebih rapi.
-                    Perlu diperhatikan bahwa <code>toFixed()</code>
-                    mengembalikan nilai bertipe String.
-                </p>
-            </div>
-        </div>
     </section>
 
     <script src="latihan_1.js"></script>
