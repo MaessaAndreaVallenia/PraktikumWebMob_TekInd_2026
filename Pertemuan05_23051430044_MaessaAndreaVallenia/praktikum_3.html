@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langkah 3 - Object JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card-custom {
+            max-width: 650px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="bg-info text-light text-center py-4 mb-4 shadow">
+        <h1 class="fw-bold mb-1">Praktikum 3 - Object Data Mesin</h1>
+        <p class="mb-0">Maessa Andrea Vallenia</p>
+        <p class="mb-0">23051430044</p>
+    </header>
+
+    <div class="container">
+
+        <!-- CARD DATA -->
+        <div class="card shadow card-custom border-primary">
+            <div class="card-body text-center">
+
+                <h5 class="mb-2">Data Mesin Produksi</h5>
+                <hr>
+
+                <p>
+                    ID : <b>M-01</b><br>
+                    Nama : <b>Injection Molding 50 Ton</b><br>
+                    Merk : <b>Toshiba</b><br>
+                    Tahun : <b>2018</b>
+                </p>
+
+                <hr>
+
+                <p>
+                    Kecepatan Max : <b>200 mm/s</b><br>
+                    Tekanan Max : <b>150 bar</b>
+                </p>
+
+                <button id="btnTampil" class="btn btn-primary w-100 mt-2">
+                    Tampilkan Data
+                </button>
+
+                <div id="hasilOutput" class="alert alert-success mt-3">
+                    Hasil muncul di sini
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="text-center mt-4 mb-2">
+        <small>Praktikum JavaScript Pertemuan 5</small>
+    </footer>
+
+    <script src="praktikum_3.js"></script>
+
+</body>
+
+</html>
