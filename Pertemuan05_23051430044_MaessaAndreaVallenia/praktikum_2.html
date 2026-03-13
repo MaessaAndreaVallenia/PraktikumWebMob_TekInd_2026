@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langkah 2 - Array dan Looping</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .wrapper {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .kode {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="bg-info text-light text-center py-4 mb-4 shadow">
+        <h1 class="fw-bold mb-1">Praktikum 2 - Array dan Looping</h1>
+        <p class="mb-0">Maessa Andrea Vallenia</p>
+        <p class="mb-0">23051430044</p>
+    </header>
+
+    <div class="container wrapper">
+
+        <!-- CARD UTAMA -->
+        <div class="card shadow mb-3">
+            <div class="card-body text-center">
+
+                <h5 class="mb-2">Daftar Produk Cacat</h5>
+
+                <div class="kode mb-2">
+                    ["C-001","C-005","C-012","C-001","C-020"]
+                </div>
+
+                <button id="btnTampil" class="btn btn-primary w-100 mt-2">
+                    Tampilkan Data
+                </button>
+
+                <div id="hasilOutput" class="alert alert-success mt-3 mb-0">
+                    Hasil muncul di sini
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TABEL -->
+        <div class="card shadow">
+            <div class="card-body">
+
+                <h5 class="text-center mb-3">Rekap Data Cacat</h5>
+
+                <table class="table table-bordered text-center">
+                    <thead class="table-info">
+                        <tr>
+                            <th>No</th>
+                            <th>Kode Cacat</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="rekapTable">
+                        <tr>
+                            <td colspan="2">Belum ada data</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center mt-4 mb-2">
+        <small>Praktikum JavaScript Pertemuan 5</small>
+    </footer>
+
+    <script src="praktikum_2.js"></script>
+
+</body>
+
+</html>
