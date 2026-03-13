@@ -1,0 +1,60 @@
+<style>
+
+body {
+    background-color: #f8f9fa;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #17a2b8, #0dcaf0);
+    color: white;
+}
+
+/* CARD */
+.card {
+    border-radius: 12px;
+}
+
+/* BUTTON */
+button {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* OUTPUT */
+#hasilOutput {
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+}
+
+/* STATUS */
+.status-efisien {
+    color: green;
+    font-weight: bold;
+}
+
+.status-tinggi {
+    color: red;
+    font-weight: bold;
+}
+
+.status-error {
+    color: orange;
+    font-weight: bold;
+}
+
+/* TABLE */
+table {
+    font-size: 14px;
+}
+
+thead {
+    font-weight: bold;
+}
+
+/* HOVER ROW */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+</style>
