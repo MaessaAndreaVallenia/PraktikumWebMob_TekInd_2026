@@ -1,0 +1,33 @@
+body {
+    background-color: #f5f8fc; /* biru muda soft */
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.card-custom {
+    max-width: 650px;
+    margin: 1rem auto;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    background-color: #00c3ffb5;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.2);
+}
+
+header h1 { font-weight: bold; }
+header h6, header p { margin-bottom: 0; }
+
+.btn { font-weight: bold; }
+.alert { text-align: left; }
+
+input[type="number"], select { padding: 0.5rem; }
+
+table th, table td { vertical-align: middle !important; }
+
+.card h4, .card h5 { font-weight: bold; }
+
+footer { text-align: center; margin-top: 3rem; margin-bottom: 1rem; font-size: 0.9rem; }

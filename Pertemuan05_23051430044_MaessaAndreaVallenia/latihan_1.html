@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latihan Function</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- CSS latihan -->
+<link href="latihan_1.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <!-- Judul latihan -->
+    <h1>Latihan 1 - Function</h1>
+    <!-- Nama mahasiswa -->
+    <h6>Maessa Andrea Vallenia</h6>
+    <!-- NIM mahasiswa -->
+    <p>23051430044</p>
+</header>
+
+<div class="container py-3">
+
+    <!-- CARD INPUT PERHITUNGAN -->
+    <div class="card shadow card-custom border-primary mb-4 p-3">
+        <div class="card-body text-center">
+            <!-- Judul bagian perhitungan -->
+            <h4 class="mb-3">Pilih Jenis Perhitungan</h4>
+
+            <!-- Dropdown untuk memilih jenis perhitungan -->
+            <select id="jenisHitung" class="form-select mb-3 w-50 mx-auto">
+                <option value="lingkaran">Lingkaran</option>
+                <option value="kubus">Kubus</option>
+                <option value="balok">Balok</option>
+            </select>
+
+            <!-- Tempat inputan dinamis sesuai pilihan -->
+            <div id="inputFields" class="mb-3"></div>
+
+            <!-- Tombol untuk melakukan perhitungan -->
+            <button id="btnHitung" class="btn btn-primary w-50">Hitung</button>
+
+            <!-- Div untuk menampilkan hasil perhitungan -->
+            <div id="hasilOutput" class="alert alert-success mt-3">Hasil akan muncul di sini</div>
+        </div>
+    </div>
+
+    <!-- CARD REKAP PERHITUNGAN -->
+    <div class="card shadow card-custom p-3">
+        <div class="card-body">
+            <!-- Judul bagian rekap -->
+            <h4 class="text-center mb-3">Rekap Perhitungan</h4>
+
+            <!-- Tabel untuk menampilkan riwayat perhitungan -->
+            <table class="table table-bordered text-center">
+                <thead class="table-info">
+                    <tr><th>Rumus</th><th>Hasil</th></tr>
+                </thead>
+                <tbody id="rekapTable">
+                    <!-- Default teks jika belum ada perhitungan -->
+                    <tr><td colspan="2">Belum ada data</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center mt-5 mb-3">
+<small>Praktikum JavaScript</small>
+</footer>
+
+<!-- Script JS -->
+<script src="latihan_1.js"></script>
+</body>
+</html>
