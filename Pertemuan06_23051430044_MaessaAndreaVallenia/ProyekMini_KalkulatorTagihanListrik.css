@@ -1,0 +1,24 @@
+body {
+    background: linear-gradient(
+        to right,
+        #0f2027,
+        #203a43,
+        #346174
+    );
+    min-height: 100vh;
+}
+
+.card-custom {
+    border-radius: 10px;
+}
+
+.hasil-box {
+    background-color: #1c3e60;
+    border-radius: 15px;
+    padding: 17px;
+    color: white;
+}
+
+button {
+    font-weight: bold;
+}
