@@ -1,0 +1,161 @@
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4; /* Warna abu-abu muda untuk background */
+    color: #333; 
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50; /* Biru tua gelap */
+    text-align: center;
+    border-bottom: 2px solid #2c3e50; 
+    padding-bottom: 10px;
+}
+  
+h2 {
+    color: #34495e;
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menggabungkan border ganda menjadi satu */
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Efek bayangan halus */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2980b9; /* Biru profesional */
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Highlight baris saat mouse diarahkan */
+}
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto; /* Formulir berada di tengah */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%; /* Lebar penuh */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Padding tidak menambah lebar total */
+}
+
+/* Styling khusus tombol */
+button {
+    background-color: #27ae60; /* Hijau */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #219150; /* Hijau lebih gelap saat hover */
+}
+
+/* Tambahan styling untuk halaman utama */
+.container {
+    max-width: 1200px;
+}
+
+/* Navbar spacing */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Card KPI hover effect */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Judul section */
+h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Table improvement */
+table {
+    background-color: white;
+}
+
+.table th {
+    text-align: center;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Form section spacing */
+.container.mt-5 {
+    margin-top: 40px !important;
+}
+
+/* Panel kontrol mesin */
+.card.mt-4 {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Status indicator lebih jelas */
+#statusIndicator {
+    font-size: 18px;
+}
+
+/* Suhu mesin styling */
+#suhuMesin {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Button spacing */
+button {
+    margin: 5px;
+}
+
+/* Input RPM section */
+.mt-3 {
+    max-width: 800px;
+    margin: 0 auto;
+}
