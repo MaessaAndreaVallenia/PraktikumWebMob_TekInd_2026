@@ -1,0 +1,30 @@
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(244, 242, 242, 0.1);
+}
+
+table {
+    background-color: white;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.main-wrapper {
+    max-width: 1100px;   /* biar nggak full layar */
+    margin: 40px auto;   /* center + jarak atas bawah */
+    background: white;   /* biar jadi kotak */
+    padding: 30px;       /* jarak isi ke tepi */
+    border-radius: 12px; /* sudut melengkung */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* bayangan */
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Audit 5S</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="ProyekMini_Checklist5S.css">
+</head>
+
+<head>
+<body class="bg-light">
+    <div class="main-wrapper">
+        <header class="bg-info text-light text-center py-5 mb-4">
+    <h1 class="fw-bold mb-2">Proyek Mini - Aplikasi Checklist 5S</h1>
+    <p class="fs-5 mb-0">Maessa Andrea Vallenia</p>
+    <p class="mb-0">23051430044</p>
+</header>
+
+    <div class="row">
+
+        <!-- FORM -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">Form Audit</div>
+                <div class="card-body">
+
+                    <form id="form5S">
+
+                        <div class="mb-3">
+                            <label>Nama Auditor</label>
+                            <input type="text" id="auditor" class="form-control" required>
+                        </div>
+
+                        <!-- CHECKLIST -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="seiri">
+                            <label class="form-check-label">Seiri (Ringkas)</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="seiton">
+                            <label class="form-check-label">Seiton (Rapi)</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="seiso">
+                            <label class="form-check-label">Seiso (Resik)</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="seiketsu">
+                            <label class="form-check-label">Seiketsu (Rawat)</label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="shitsuke">
+                            <label class="form-check-label">Shitsuke (Rajin)</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Simpan Audit</button>
+                        <button type="button" id="hapusSemua" class="btn btn-danger w-100 mt-2">
+                            Hapus Semua Data
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TABEL -->
+        <div class="col-md-8">
+            <h3>Riwayat Audit</h3>
+
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Auditor</th>
+                        <th>Skor (%)</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelAudit"></tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+<script src="ProyekMini_Checklist5S.js"></script>
+</body>
+</html>
