@@ -1,30 +1,177 @@
-body {
-    background-color: #f4f6f9;
-    font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-h2 {
-    font-weight: bold;
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-fluid {
+    padding: 20px;
+}
+
+.header-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.header-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.author-name {
+    font-size: 1.3rem;
+    font-weight: 500;
+    opacity: 0.95;
+}
+
+.student-id {
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+.main-content {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.form-section, .table-section {
+    flex: 1;
+    min-width: 350px;
 }
 
 .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.form-header, .table-header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border-radius: 15px 15px 0 0 !important;
+    padding: 15px 20px;
+}
+
+.table-header {
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.card-header h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.form-card .card-body, .table-card .card-body {
+    padding: 25px;
+}
+
+.checklist-section {
+    background: #f8f9ff;
     border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(244, 242, 242, 0.1);
+    padding: 20px;
+    border-left: 4px solid #4facfe;
 }
 
-table {
-    background-color: white;
+.checklist-items .form-check {
+    padding-left: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-table tbody tr:hover {
-    background-color: #f1f1f1;
+.checklist-items .form-check:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-.main-wrapper {
-    max-width: 1100px;   /* biar nggak full layar */
-    margin: 40px auto;   /* center + jarak atas bawah */
-    background: white;   /* biar jadi kotak */
-    padding: 30px;       /* jarak isi ke tepi */
-    border-radius: 12px; /* sudut melengkung */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* bayangan */
+.btn {
+    border-radius: 25px;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    border: none;
+}
+
+.search-container {
+    min-width: 250px;
+}
+
+.table-responsive {
+    border-radius: 0 0 15px 15px;
+}
+
+.table th {
+    background: #495057;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 15px 12px;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+    border-color: #dee2e6;
+}
+
+.badge {
+    font-size: 0.85em;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.bg-success { background: #28a745 !important; }
+.bg-warning { background: #ffc107 !important; color: #000 !important; }
+.bg-danger { background: #dc3545 !important; }
+
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    border-radius: 15px 15px 0 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
 }

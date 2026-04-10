@@ -4,91 +4,202 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checklist Audit 5S</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="ProyekMini_Checklist5S.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .operator-card { border-left: 4px solid #007bff; }
+        .shift-badge { font-size: 0.8em; }
+        .form-floating { margin-bottom: 1rem; }
+    </style>
 </head>
-
-<head>
 <body class="bg-light">
     <div class="main-wrapper">
         <header class="bg-info text-light text-center py-5 mb-4">
-    <h1 class="fw-bold mb-2">Proyek Mini - Aplikasi Checklist 5S</h1>
-    <p class="fs-5 mb-0">Maessa Andrea Vallenia</p>
-    <p class="mb-0">23051430044</p>
-</header>
+            <h1 class="fw-bold mb-2">Proyek Mini - Aplikasi Checklist 5S</h1>
+            <p class="fs-5 mb-0">Maessa Andrea Vallenia</p>
+            <p class="mb-0">23051430044</p>
+        </header>
 
-    <div class="row">
-
-        <!-- FORM -->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header bg-primary text-white">Form Audit</div>
-                <div class="card-body">
-
-                    <form id="form5S">
-
-                        <div class="mb-3">
-                            <label>Nama Auditor</label>
-                            <input type="text" id="auditor" class="form-control" required>
-                        </div>
-
-                        <!-- CHECKLIST -->
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="seiri">
-                            <label class="form-check-label">Seiri (Ringkas)</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="seiton">
-                            <label class="form-check-label">Seiton (Rapi)</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="seiso">
-                            <label class="form-check-label">Seiso (Resik)</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="seiketsu">
-                            <label class="form-check-label">Seiketsu (Rawat)</label>
-                        </div>
-
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="shitsuke">
-                            <label class="form-check-label">Shitsuke (Rajin)</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-success w-100">Simpan Audit</button>
-                        <button type="button" id="hapusSemua" class="btn btn-danger w-100 mt-2">
-                            Hapus Semua Data
+        <div class="row">
+            <!-- FORM -->
+            <div class="col-md-4">
+                <!-- Operator Management Card -->
+                <div class="card operator-card mb-3">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-users me-2"></i>Daftar Operator</span>
+                        <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#modalOperator">
+                            <i class="fas fa-plus"></i> Tambah
                         </button>
+                    </div>
+                    <div class="card-body p-2">
+                        <select id="pilihOperator" class="form-select form-select-sm" onchange="updateShiftDropdown()">
+                            <option value="">Pilih Operator</option>
+                        </select>
+                    </div>
+                </div>
 
-                    </form>
+                <!-- Form Utama -->
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        Form Audit 5S
+                        <span id="errorShift" class="badge bg-danger ms-2" style="display: none;">
+                            <i class="fas fa-exclamation-triangle me-1"></i>Shift sudah ada!
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <form id="form5S">
+                            <!-- Pengguna -->
+                            <div class="form-floating mb-3">
+                                <select id="pengguna" class="form-select" required>
+                                    <option value="">Pilih Pengguna</option>
+                                </select>
+                                <label>Pengguna</label>
+                            </div>
 
+                            <!-- Tanggal -->
+                            <div class="form-floating mb-3">
+                                <input type="date" id="tanggal" class="form-control" required>
+                                <label>Tanggal</label>
+                            </div>
+
+                            <!-- Shift (tergantung operator) -->
+                            <div class="form-floating mb-3">
+                                <select id="shift" class="form-select" required disabled>
+                                    <option value="">Pilih Shift</option>
+                                </select>
+                                <label>Shift</label>
+                            </div>
+
+                            <!-- Checklist 5S -->
+                            <div class="mb-4 p-3 border rounded">
+                                <label class="form-label fw-bold mb-3 d-block">
+                                    <i class="fas fa-check-circle text-success me-2"></i>Checklist 5S
+                                </label>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="seiri">
+                                            <label class="form-check-label">Seiri (Ringkas)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="seiton">
+                                            <label class="form-check-label">Seiton (Rapi)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="seiso">
+                                            <label class="form-check-label">Seiso (Resik)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="seiketsu">
+                                            <label class="form-check-label">Seiketsu (Rawat)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="shitsuke">
+                                            <label class="form-check-label">Shitsuke (Rajin)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100 mb-2" disabled>
+                                <i class="fas fa-save me-2"></i>Simpan Audit
+                            </button>
+                            <button type="button" id="hapusSemua" class="btn btn-danger w-100">
+                                <i class="fas fa-trash me-2"></i>Hapus Semua Data
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABEL -->
+            <div class="col-md-8">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3><i class="fas fa-history me-2"></i>Riwayat Audit</h3>
+                    <div class="input-group" style="width: 300px;">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Cari operator, shift, atau nama...">
+                        <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped" id="tabelUtama">
+                        <thead class="table-dark">
+                            <tr>
+                                <th><i class="fas fa-calendar"></i> Tanggal</th>
+                                <th><i class="fas fa-user"></i> Operator</th>
+                                <th><i class="fas fa-clock"></i> Shift</th>
+                                <th><i class="fas fa-users"></i> Pengguna</th>
+                                <th>Skor</th>
+                                <th><i class="fas fa-cog"></i> Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelAudit"></tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- TABEL -->
-        <div class="col-md-8">
-            <h3>Riwayat Audit</h3>
-
-            <table class="table table-bordered table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Tanggal</th>
-                        <th>Auditor</th>
-                        <th>Skor (%)</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody id="tabelAudit"></tbody>
-            </table>
+    <!-- Modal Tambah/Edit Operator -->
+    <div class="modal fade" id="modalOperator" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalTitle"><i class="fas fa-user-plus me-2"></i>Tambah Operator</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nama Operator *</label>
+                        <input type="text" id="namaOperator" class="form-control" placeholder="Masukkan nama operator lengkap">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Shift Pagi</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="shiftPagi" checked>
+                                <label class="form-check-label">06:00-14:00</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Shift Siang</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="shiftSiang" checked>
+                                <label class="form-check-label">14:00-22:00</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Shift Malam</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="shiftMalam" checked>
+                                <label class="form-check-label">22:00-06:00</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" id="simpanOperator">
+                        <i class="fas fa-save me-2"></i>Simpan Operator
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
 
-<script src="ProyekMini_Checklist5S.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="ProyekMini_Checklist5S.js"></script>
 </body>
 </html>
