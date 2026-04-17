@@ -1,0 +1,45 @@
+body {
+    background: linear-gradient(to right, #f1f3f5, #ffffff);
+}
+
+/* Header */
+.header-box {
+    background: #33363a;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* Card */
+.card {
+    border: none;
+    border-left: 5px solid #2b2e31;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Button */
+.btn-outline-dark {
+    border-radius: 10px;
+}
+
+.card-square {
+    border-radius: 10px !important; /* Kotak sedikit melengkung */
+}
+        
+.card-square.border-success {
+    border: 10px solid #28a745 !important; /* Border hijau tebal */
+    background-color: #f8fff9 !important; /* Background hijau muda */
+}
+        
+.btn-square {
+    border-radius: 10px !important; /* Tombol kotak */
+}
+        
+.badge-square {
+    border-radius: 10px !important; /* Badge kotak */
+}
