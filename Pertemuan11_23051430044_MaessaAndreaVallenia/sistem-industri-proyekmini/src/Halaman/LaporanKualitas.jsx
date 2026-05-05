@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function LaporanKualitas() {
-  // Data sesuai checklist (minimal 5+ item)
+  // Data sesuai checklist 
   const dataCacat = [
     { id: 1, tanggal: "2024-05-01", mesin: "CNC-Alpha", jenisCacat: "Goresan Permukaan", jumlah: "12 unit", status: "Reported" },
     { id: 2, tanggal: "2024-05-01", mesin: "Lathe-Beta", jenisCacat: "Dimensi Tidak Sesuai", jumlah: "5 unit", status: "In Review" },
@@ -14,14 +14,12 @@ function LaporanKualitas() {
 
   return (
     <div className="container mt-4">
-      {/* Header Section sesuai Gambar */}
       <div className="d-flex justify-content-between align-items-start mb-4">
         <div>
           <h1 className="fw-bold m-0"><span className="me-3"></span>📝 Data Laporan Kualitas</h1>
           <p className="text-muted ms-4 ps-2"><strong>Operator: Maessa Andrea Vallenia (23051430044)</strong></p>
         </div>
-        
-        {/* Tombol Navigasi dengan Ikon */}
+
         <div className="btn-group shadow-sm border rounded">
           <Link to="/" className="btn btn-white border-end py-2 px-3 text-primary d-flex align-items-center">
             Dashboard
@@ -32,7 +30,6 @@ function LaporanKualitas() {
         </div>
       </div>
 
-      {/* Tabel Utama sesuai Gambar */}
       <div className="card border-0 shadow-sm rounded-3 overflow-hidden">
         <div className="card-header bg-dark text-white text-center py-3">
           <h5 className="m-0 fw-bold">Quality Control Logs</h5>

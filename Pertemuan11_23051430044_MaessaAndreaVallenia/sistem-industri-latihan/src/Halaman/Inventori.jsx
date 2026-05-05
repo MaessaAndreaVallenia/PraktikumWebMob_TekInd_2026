@@ -67,7 +67,6 @@ function Inventori() {
               {products.map((item) => (
                 <tr key={item.id} className="align-middle">
                   <td className="text-center">{item.id}</td>
-                  {/* Isi Produk rata kiri (text-start) dengan sedikit jarak (ps-4) */}
                   <td className="text-start ps-4">
                     {/* LATIHAN 1: Link Dynamic Route ke detail berdasarkan ID */}
                     <Link 

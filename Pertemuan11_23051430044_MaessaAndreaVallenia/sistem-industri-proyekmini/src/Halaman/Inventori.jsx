@@ -5,7 +5,7 @@ function Inventori() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Data Inventori Lengkap (10 Item)
+  // Data Inventori 
   const dataBahanBaku = [
     { id: 1, nama: "Baja Karbon High Grade", status: "Available", stok: "500 kg", lokasi: "Gudang A" },
     { id: 2, nama: "Aluminium Batangan", status: "Available", stok: "250 unit", lokasi: "Gudang B" },
@@ -30,7 +30,6 @@ function Inventori() {
 
   return (
     <div className="container mt-4">
-      {/* Tombol Navigasi Atas */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
           <h1 className="fw-bold m-0"><span className="me-3"></span>📂 Data Stock Inventori</h1>

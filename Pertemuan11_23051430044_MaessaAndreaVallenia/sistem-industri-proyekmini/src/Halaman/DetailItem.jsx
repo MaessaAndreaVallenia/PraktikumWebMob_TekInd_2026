@@ -5,8 +5,6 @@ function DetailItem() {
   const { id } = useParams();
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  // Data ini harus sama dengan yang ada di Inventori agar sinkron
   const dataBahanBaku = [
     { id: 1, nama: "Baja Karbon High Grade", deskripsi: "Baja karbon tinggi yang digunakan untuk konstruksi alat berat dan rangka mesin.", spesifikasi: "Tebal 10mm, ASTM A36", supplier: "PT. Krakatau Steel" },
     { id: 2, nama: "Aluminium Batangan", deskripsi: "Batangan aluminium murni untuk komponen mesin ringan.", spesifikasi: "Alloy 6061, Diameter 5cm", supplier: "PT. Inalum" },
@@ -17,10 +15,9 @@ function DetailItem() {
 
   useEffect(() => {
     setLoading(true);
-    // Kita cari data di array dataBahanBaku yang ID-nya cocok dengan ID di URL
+    // Cari data di array dataBahanBaku yang ID-nya cocok dengan ID di URL
     const dataDitemukan = dataBahanBaku.find(produk => produk.id === parseInt(id));
 
-    // Simulasi loading sebentar biar kerasa real
     setTimeout(() => {
       setItem(dataDitemukan);
       setLoading(false);
@@ -45,7 +42,6 @@ function DetailItem() {
   return (
     <div className="container mt-5">
       <div className="card border-0 shadow-lg rounded-4 overflow-hidden">
-        {/* Header Biru yang Cakep */}
         <div className="card-header bg-primary text-white p-4">
           <Link to="/inventori" className="text-white text-decoration-none mb-3 d-inline-block small">
             ← Kembali ke Inventori
@@ -78,8 +74,7 @@ function DetailItem() {
             </div>
           </div>
         </div>
-        
-        {/* Footer Nama */}
+
         <div className="card-footer bg-light text-center py-3 border-0">
           &copy; Sistem Informasi Pabrik | Dikelola oleh <strong>Maessa Andrea Vallenia</strong>
         </div>

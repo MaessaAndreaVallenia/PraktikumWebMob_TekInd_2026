@@ -21,7 +21,7 @@ function DetailItem() {
     // Cari data berdasarkan ID yang ada di URL
     const temukanData = dataBahanBaku.find(produk => produk.id === parseInt(id));
     
-    // Loading kilat biar smooth
+    // Loading 
     setTimeout(() => {
       setItem(temukanData);
       setLoading(false);
@@ -39,7 +39,7 @@ function DetailItem() {
 
   return (
     <div className="container mt-5">
-      {/* Link Kembali yang Simpel */}
+     
       <Link to="/inventori" className="text-decoration-none d-inline-block mb-3">
         ← Kembali ke Daftar Inventori
       </Link>

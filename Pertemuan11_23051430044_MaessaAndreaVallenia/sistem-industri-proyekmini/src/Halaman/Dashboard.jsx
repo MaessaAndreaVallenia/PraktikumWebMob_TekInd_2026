@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 function Dashboard() {
   return (
     <div className="container mt-5">
-      {/* Hero Section */}
       <div className="p-5 mb-4 bg-dark text-white rounded-4 shadow-lg position-relative overflow-hidden">
         <div className="position-relative z-1">
           <h1 className="display-4 fw-bold">Sistem Kendali Pabrik</h1>
@@ -12,15 +11,12 @@ function Dashboard() {
           <hr className="my-4 border-secondary" />
           <p>Status Sistem: Online & Aktif</p>
         </div>
-        {/* Dekorasi Background */}
         <div className="position-absolute top-0 end-0 p-5 opacity-25" style={{ fontSize: '15rem', transform: 'rotate(15deg)' }}>
             ⚙️
         </div>
       </div>
 
-      {/* Stats Summary Section */}
       <div className="row g-4 mb-5">
-        {/* Kartu Mesin Aktif (Hijau) */}
         <div className="col-md-4">
           <div className="card border-0 shadow-sm rounded-3 h-100" 
                style={{ backgroundColor: '#f8f9fa', borderLeft: '5px solid #52b788 !important', borderLeftStyle: 'solid' }}>
@@ -31,7 +27,6 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Kartu Output (Biru) */}
         <div className="col-md-4">
           <div className="card border-0 shadow-sm rounded-3 h-100" 
                style={{ backgroundColor: '#f8f9fa' }}>
@@ -42,7 +37,6 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Kartu Stok Kritis (Kuning) */}
         <div className="col-md-4">
           <div className="card border-0 shadow-sm rounded-3 h-100" 
                style={{ backgroundColor: '#f8f9fa' }}>
@@ -54,7 +48,6 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Main Navigation Cards */}
       <h4 className="fw-bold mb-4">Navigasi Cepat</h4>
       <div className="row g-4">
         <div className="col-md-6">
@@ -85,7 +78,6 @@ function Dashboard() {
         &copy; Sistem Informasi Pabrik | Dikelola oleh <strong>Maessa Andrea Vallenia</strong>
       </footer>
 
-      {/* CSS internal sederhana untuk efek hover */}
       <style>{`
         .hover-card:hover {
           transform: translateY(-10px);
