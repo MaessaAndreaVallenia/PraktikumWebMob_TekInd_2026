@@ -12,14 +12,29 @@ function GrafikDonat() {
         data: [50, 30, 20],
         backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
         hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+        borderWidth: 1,
       },
     ],
   };
 
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false, // WAJIB false biar tingginya bisa kita atur
+    plugins: {
+      legend: {
+        position: 'bottom', // Di HP lebih rapi kalau legend di bawah
+        labels: {
+          boxWidth: 12,
+          font: { size: 10 }
+        }
+      }
+    },
+    cutout: '70%', // Bikin lubang tengahnya lebih gede biar estetik
+  };
+
   return (
-    <div>
-      <h6 className="text-center">Proporsi Defect</h6>
-      <Doughnut data={data} />
+    <div style={{ height: '250px', position: 'relative' }}>
+      <Doughnut data={data} options={options} />
     </div>
   );
 }

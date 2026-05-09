@@ -5,7 +5,6 @@ import Sidebar from '../Komponen/Sidebar';
 function DetailItem() {
   const { id } = useParams();
 
-  // Database detail untuk 5 produk
   const database = {
     '1': { nama: 'Baja Karbon High Grade', spek: 'Tipe: AISI 1045, Hardness: 170 HB', supplier: 'PT. Besi Utama', tgl: '12 April 2026', stok: '500 kg' },
     '2': { nama: 'Aluminium Batangan', spek: 'Seri: 6061, Tahan Korosi Tinggi', supplier: 'Logam Jaya CV', tgl: '05 Mei 2026', stok: '250 unit' },
@@ -27,34 +26,82 @@ function DetailItem() {
 
   return (
     <div className="container-fluid p-0 bg-light min-vh-100">
+      <header className="navbar navbar-dark sticky-top bg-dark p-2 shadow d-md-none">
+        <div className="container-fluid d-flex justify-content-between align-items-center">
+          <a className="navbar-brand fw-bold m-0" href="#">TI - UNY</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </header>
+
       <div className="row g-0">
         <Sidebar aktif="inventori" />
-        <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
-          <Link to="/inventori" className="btn btn-outline-dark btn-sm mb-4">← Kembali ke Inventori</Link>
-          
-          <div className="card border-0 shadow-lg p-4 rounded-3">
-            <h1 className="fw-bold text-primary mb-1">{item.nama}</h1>
-            <p className="text-muted">ID Inventori: #INV-00{id}</p>
-            <hr />
-            <div className="row mt-4">
-              <div className="col-md-7 border-end">
-                <h5 className="fw-bold">Spesifikasi Teknik</h5>
-                <div className="bg-light p-3 border rounded">
-                   {item.spek}
+
+        <main className="col-md-9 ms-sm-auto col-lg-10 px-3 px-md-4">
+
+          <div className="d-flex flex-row justify-content-between align-items-start pt-4 pb-3 mb-4 border-bottom bg-white mt-3 px-3 rounded-3 shadow-sm">
+            <div className="text-start">
+               <h1 className="h4 fw-bold m-0 text-dark">Detail Spesifikasi</h1>
+               <small className="text-primary fw-bold d-block">
+                 ● Inventory ID: #INV-00{id}
+               </small>
+            </div>
+            
+            <div className="d-flex align-items-center bg-light p-2 rounded-pill px-3 border shadow-sm">
+              <div className="text-end me-2 d-none d-sm-block">
+                <div className="fw-bold text-dark" style={{ fontSize: '0.75rem', lineHeight: '1' }}>
+                  Maessa Andrea
+                </div>
+                <div className="text-muted" style={{ fontSize: '0.65rem' }}>
+                  23051430044
                 </div>
               </div>
-              <div className="col-md-5 ps-md-4">
-                <h5 className="fw-bold">Detail Logistik</h5>
-                <table className="table table-sm mt-3">
-                  <tbody>
-                    <tr><td className="text-muted">Stok</td><td className="fw-bold">: {item.stok}</td></tr>
-                    <tr><td className="text-muted">Supplier</td><td className="fw-bold">: {item.supplier}</td></tr>
-                    <tr><td className="text-muted">Tgl. Masuk</td><td className="fw-bold">: {item.tgl}</td></tr>
-                  </tbody>
-                </table>
+              <div className="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white fw-bold shadow-sm" 
+                   style={{ minWidth: '35px', height: '35px', fontSize: '0.7rem', border: '2px solid #fff' }}>
+                MA
               </div>
             </div>
           </div>
+
+          <Link to="/inventori" className="btn btn-outline-dark btn-sm mb-4 fw-bold rounded-pill px-3">
+            ← Kembali ke Inventori
+          </Link>
+ 
+          <div className="card border-0 shadow-sm p-4 rounded-4 mb-5">
+            <div className="row">
+              <div className="col-12 col-lg-7 border-end-lg">
+                <h2 className="fw-bold text-primary mb-3">{item.nama}</h2>
+                <h5 className="fw-bold small text-muted text-uppercase mb-3">Spesifikasi Teknik</h5>
+                <div className="bg-light p-4 border rounded-4 mb-4">
+                   <code className="text-dark" style={{fontSize: '1rem'}}>{item.spek}</code>
+                </div>
+              </div>
+              
+              <div className="col-12 col-lg-5 ps-lg-5 mt-4 mt-lg-0">
+                <h5 className="fw-bold small text-muted text-uppercase mb-3">Detail Logistik</h5>
+                <div className="table-responsive">
+                  <table className="table table-borderless">
+                    <tbody>
+                      <tr className="border-bottom">
+                        <td className="text-muted py-3">Status Stok</td>
+                        <td className="fw-bold text-end py-3 text-success">{item.stok}</td>
+                      </tr>
+                      <tr className="border-bottom">
+                        <td className="text-muted py-3">Main Supplier</td>
+                        <td className="fw-bold text-end py-3">{item.supplier}</td>
+                      </tr>
+                      <tr className="border-bottom">
+                        <td className="text-muted py-3">Kedatangan Terakhir</td>
+                        <td className="fw-bold text-end py-3">{item.tgl}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </main>
       </div>
     </div>

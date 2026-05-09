@@ -1,31 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // TAMBAHKAN useState dan useEffect DI SINI
 import { Bar } from 'react-chartjs-2';
 import { 
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
-  PointElement,  
-  LineElement,   
+  PointElement,   
+  LineElement,    
   LineController, 
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
 
+// Registrasi komponen ChartJS (Cukup satu kali saja)
 ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
-  PointElement,  
-  LineElement,   
+  PointElement,   
+  LineElement,    
   LineController, 
   Title,
   Tooltip,
   Legend
 );
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Title, Tooltip, Legend);
 
 function GrafikProduksi() {
   // 1. Siapkan State untuk menampung data (awalnya kosong)
@@ -72,24 +71,39 @@ function GrafikProduksi() {
     ],
   };
 
-  const options = {
+const options = {
     responsive: true,
+    maintainAspectRatio: false, // WAJIB false agar kita bisa atur tinggi sendiri
     plugins: {
-      legend: { position: 'top' },
-      title: { display: true, text: 'Monitoring Output Lini 1' }
+      legend: { 
+        position: 'top',
+        labels: { boxWidth: 10, font: { size: 10 } } // Kecilin ukuran legend biar gak makan tempat
+      },
+      title: { display: true, text: 'Monitoring Output Lini 1', font: { size: 12 } }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { font: { size: 10 } }
+      },
+      x: {
+        ticks: { font: { size: 10 } }
+      }
     }
   };
 
-  // Tampilan saat data sedang "diambil"
   if (loading) {
     return <div className="text-center p-5">⏳ Menghubungkan ke Mesin...</div>;
   }
 
   return (
     <div className="animate__animated animate__fadeIn">
-      <Bar data={data} options={options} />
+      {/* Bungkus dengan div yang punya height tetap agar tidak kepanjangan */}
+      <div style={{ height: '250px', position: 'relative' }}>
+        <Bar data={data} options={options} />
+      </div>
       <p className="text-center text-muted mt-2">
-        <small>● Live data sinkron dengan sensor mesin</small>
+        <small style={{ fontSize: '10px' }}>● Live data sinkron dengan sensor mesin</small>
       </p>
     </div>
   );
