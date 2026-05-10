@@ -10,6 +10,7 @@ function Laporan() {
 
   return (
     <div className="container-fluid bg-light min-vh-100 p-0">
+      {/* 1. TOP NAVBAR MOBILE (KONSISTEN) */}
       <header className="navbar navbar-dark sticky-top bg-dark p-2 shadow d-md-none">
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <a className="navbar-brand fw-bold m-0" href="#">TI - UNY</a>
@@ -20,18 +21,23 @@ function Laporan() {
       </header>
 
       <div className="row g-0">
+        {/* 2. SIDEBAR */}
         <Sidebar aktif="laporan" />
 
+        {/* 3. MAIN CONTENT */}
         <main className="col-md-9 ms-sm-auto col-lg-10 px-3 px-md-4">
-
+          
+          {/* HEADER AREA (KONSISTEN: Judul Kiri, Profil Kanan) */}
           <div className="d-flex flex-row justify-content-between align-items-start pt-4 pb-3 mb-4 border-bottom bg-white mt-3 px-3 rounded-3 shadow-sm">
+            {/* Sisi Kiri: Judul */}
             <div className="text-start">
                <h1 className="h4 fw-bold m-0 text-dark">Laporan Kualitas QC</h1>
                <small className="text-danger fw-bold d-block">
                  ● Quality Control & Maintenance Log
                </small>
             </div>
-
+            
+            {/* Sisi Kanan: Profile Maessa (Identik Dashboard) */}
             <div className="d-flex align-items-center bg-light p-2 rounded-pill px-3 border shadow-sm">
               <div className="text-end me-2 d-none d-sm-block">
                 <div className="fw-bold text-dark" style={{ fontSize: '0.75rem', lineHeight: '1' }}>
@@ -48,6 +54,7 @@ function Laporan() {
             </div>
           </div>
 
+          {/* 4. KPI KUALITAS (Ringkasan Kasus - 2 Kolom di HP) */}
           <div className="row g-3 mb-4">
              <div className="col-6 col-lg-3">
                 <div className="card border-0 shadow-sm p-3 bg-white h-100 border-start border-dark border-4">
@@ -75,6 +82,7 @@ function Laporan() {
              </div>
           </div>
 
+          {/* 5. TABEL LOG QC */}
           <div className="card border-0 shadow-sm rounded-3 mb-5 overflow-hidden">
             <div className="card-header bg-dark text-white py-3 d-flex justify-content-between align-items-center">
               <span className="small fw-bold text-uppercase">Quality Control Logs</span>

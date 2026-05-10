@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; // Ditambahkan agar link berfungsi
 import Sidebar from '../Komponen/Sidebar';
 
 function Inventori() {
@@ -13,6 +13,7 @@ function Inventori() {
 
   return (
     <div className="container-fluid bg-light min-vh-100 p-0">
+      {/* 1. TOP NAVBAR MOBILE */}
       <header className="navbar navbar-dark sticky-top bg-dark p-2 shadow d-md-none">
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <a className="navbar-brand fw-bold m-0" href="#">TI - UNY</a>
@@ -23,8 +24,13 @@ function Inventori() {
       </header>
 
       <div className="row g-0">
+        {/* 2. SIDEBAR */}
         <Sidebar aktif="inventori" />
+
+        {/* 3. KONTEN UTAMA */}
         <main className="col-md-9 ms-sm-auto col-lg-10 px-3 px-md-4">
+          
+          {/* HEADER AREA */}
           <div className="d-flex flex-row justify-content-between align-items-start pt-4 pb-3 mb-4 border-bottom bg-white mt-3 px-3 rounded-3 shadow-sm">
             <div className="text-start">
                <h1 className="h4 fw-bold m-0 text-dark">Data Stock Inventori</h1>
@@ -49,6 +55,7 @@ function Inventori() {
             </div>
           </div>
 
+          {/* 4. KARTU STATISTIK (KPI) */}
           <div className="row g-3 mb-4">
              <div className="col-6 col-md-4">
                 <div className="card border-0 shadow-sm p-3 border-start border-primary border-4 h-100 text-center text-md-start">
@@ -70,6 +77,7 @@ function Inventori() {
              </div>
           </div>
 
+          {/* 5. TABEL DATA */}
           <div className="card border-0 shadow-sm rounded-3 mb-5 overflow-hidden">
             <div className="card-header bg-dark text-white py-3 d-flex justify-content-between align-items-center">
               <span className="small fw-bold">STOCK MONITORING</span>
@@ -91,6 +99,7 @@ function Inventori() {
                     <tr key={item.id}>
                       <td className="text-muted">#{item.id}</td>
                       <td className="text-start ps-4 fw-bold">
+                        {/* Nama item sekarang bisa diklik menuju detail */}
                         <Link to={`/inventori/${item.id}`} className="text-primary text-decoration-none">
                           {item.nama}
                         </Link>
@@ -111,14 +120,6 @@ function Inventori() {
               </table>
             </div>
           </div>
-           {/* FOOTER */}
-          <footer className="text-center py-4 border-top mt-auto">
-            <small className="text-muted">
-              &copy; 2026 Lab ERP - <strong>Universitas Negeri Yogyakarta</strong>
-              <br/>
-              <span className="text-primary fw-bold">Sistem Monitoring Terpadu</span>
-            </small>
-          </footer>
 
         </main>
       </div>
