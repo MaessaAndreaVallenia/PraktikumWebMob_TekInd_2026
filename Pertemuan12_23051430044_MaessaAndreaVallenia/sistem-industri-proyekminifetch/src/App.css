@@ -1,0 +1,28 @@
+/* Perbaikan khusus Layar HP */
+@media (max-width: 768px) {
+  /* Biar kartu stok menumpuk rapi ke bawah */
+  .row {
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+  }
+
+  .col-md-4, .col-md-6 {
+    width: 100% !important;
+    padding: 10px 0;
+  }
+
+  /* Ngecilin judul biar gak menenuhi layar */
+  h2, .h2 {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+
+  /* Biar tabel bisa digeser kiri-kanan, gak ngerusak layout */
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
